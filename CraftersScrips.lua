@@ -470,8 +470,13 @@ function TurnIn()
             yield("/interact")
             yield("/wait 1")
         else
-            yield("/callback CollectablesShop true 15 0")
-            yield("/wait 1")
+			if ScripColor == "Orange" then
+				yield("/callback CollectablesShop true 15 0")
+			else
+				yield("/callback CollectablesShop true 12 1")
+				yield("/callback CollectablesShop true 15 0")
+			end
+			yield("/wait 1")
         end
     end
 end
